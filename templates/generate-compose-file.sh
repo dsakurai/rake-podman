@@ -22,4 +22,4 @@ client_socket="PODMAN_SOCKET: /run/podman/podman.sock"
 generate_compose_file "../podman-compose.yml.with-remote" "$mount_socket" "$client_socket"
 
 # podman-compose without podman-remote
-generate_compose_file "../podman-compose.yml.no-remote"
+generate_compose_file "../podman-compose.yml.without-remote"
