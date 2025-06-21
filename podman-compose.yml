@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  rake_service:
+    # image: rake-podman
+    build:
+      context: .
+    working_dir: /workdir
+    volumes:
+      - .:/workdir
+      # Uncomment the next line if you want to use the Podman socket in the container
+      # - /run/user/1000/podman/podman.sock:/run/podman/podman.sock:Z
+    environment:
+      HOST_WORKDIR: ${PWD}
+      # Uncomment if using the Podman socket
+      # PODMAN_SOCKET: /run/podman/podman.sock
+    security_opt:
+      - label=disable
+    stdin_open: true
+    tty: true
