@@ -9,4 +9,3 @@ podman-compose build --pull
 
 export HOST_WORKDIR="$SCRIPT_PATH"
 podman-compose run --rm rake_service "$@"
-# the service name is defined in the podman-compose.yml file

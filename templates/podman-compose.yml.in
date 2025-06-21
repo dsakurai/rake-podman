@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  rake_service:
+    build:
+      context: .
+    working_dir: /workdir
+    volumes:
+      - .:/workdir
+      @MOUNT_SOCKET@
+
+    environment:
+      HOST_WORKDIR: ${HOST_WORKDIR}
+      @PODMAN_SOCKET@
+
+    security_opt:
+      - label=disable
+    stdin_open: true
+    tty: true
