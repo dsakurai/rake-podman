@@ -5,8 +5,8 @@ set -e
 # Update the container image
 podman-compose build --pull
 
-# Ensure the HOST_WORKDIR is set to the directory of this script
+# Ensure that HOST_WORKDIR is set to the directory of this script
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export HOST_WORKDIR="$SCRIPT_PATH"
+export HOST_WORKDIR="$SCRIPT_PATH" # Will be passed to the container
 
 podman-compose run --rm rake_service "$@"
