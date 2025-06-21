@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  ${SERVICE_NAME}:
+  rake_service:
     build:
       context: .
     working_dir: /workdir
