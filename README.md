@@ -1,9 +1,21 @@
-First, generate `podman-compose.yml`
+
+Enter the directory
 ```
-./templates/generate-compose-file.sh
+$ cd with-podman-remote
 ```
 
-Then, run the main script like a usual rake program:
+Or,
+```
+$ cd without-podman-remote
+```
+
+
+Then, run rake:
 ```
 ./rake.sh
+```
+
+For updating the podman-compose files:
+```
+./templates/generate-compose-file.sh
 ```
