@@ -9,4 +9,6 @@ podman-compose build --pull
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export HOST_WORKDIR="$SCRIPT_PATH" # Will be passed to the container
 
+echo $HOST_WORKDIR
+
 podman-compose run --rm rake_service "$@"

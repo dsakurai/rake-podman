@@ -23,15 +23,3 @@ generate_compose_file "../podman-compose.yml.with-remote" "$mount_socket" "$clie
 
 # podman-compose without podman-remote
 generate_compose_file "../podman-compose.yml.no-remote"
-
-pushd ..
-
-read -p "Do you want to use podman-remote in Rakefile? [y/N]: " use_remote
-if [[ "$use_remote" =~ ^[y]$ ]]; then
-    ln -sf podman-compose.yml.with-remote podman-compose.yml
-    RAKE_TASK="hello_podman"
-else
-    ln -sf podman-compose.yml.no-remote podman-compose.yml
-fi
-
-./rake.sh $RAKE_TASK
