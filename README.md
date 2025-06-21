@@ -1,9 +1,9 @@
-Do this to generate `podman-compose.yml`
+First, generate `podman-compose.yml`
 ```
 ./generate-compose-file.sh
 ```
 
-Run the main script like a usual rake program:
+Then, run the main script like a usual rake program:
 ```
 ./rake.sh
 ```
