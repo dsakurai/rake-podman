@@ -1,3 +1,7 @@
+Rake-Podman
+===========
+
+An example to call rake from podman. Inside the Rakefile, you can call podman by using podman-remote.
 
 Enter the directory
 ```
