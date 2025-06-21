@@ -2,7 +2,6 @@ version: "3.8"
 
 services:
   rake_service:
-    # image: rake-podman
     build:
       context: .
     working_dir: /workdir
