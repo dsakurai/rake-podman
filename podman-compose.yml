@@ -7,12 +7,16 @@ services:
     working_dir: /workdir
     volumes:
       - .:/workdir
-      # Uncomment the next line if you want to use the Podman socket in the container
-      # - /run/user/1000/podman/podman.sock:/run/podman/podman.sock:Z
     environment:
-      HOST_WORKDIR: ${PWD}
-      # Uncomment if using the Podman socket
-      # PODMAN_SOCKET: /run/podman/podman.sock
+      HOST_WORKDIR: ${HOST_WORKDIR}
+
+    # Uncomment the next line if you want to use the Podman socket in the container
+    # volumes:
+    #   - /run/user/1000/podman/podman.sock:/run/podman/podman.sock:Z
+    # environment:
+    #   Uncomment if using the Podman socket
+    #   PODMAN_SOCKET: /run/podman/podman.sock
+
     security_opt:
       - label=disable
     stdin_open: true

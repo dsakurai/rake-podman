@@ -2,5 +2,10 @@
 
 set -e
 
+SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_PATH"
+
 podman-compose build --pull
-podman-compose run rake_service "$@"
+
+export HOST_WORKDIR="$SCRIPT_PATH"
+podman-compose run --rm rake_service "$@"
