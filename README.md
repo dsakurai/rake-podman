@@ -21,5 +21,5 @@ Then, run rake:
 
 For updating the podman-compose files:
 ```
-./source/generate-files.sh
+./generate-files.sh
 ```
