@@ -1,7 +1,7 @@
 FROM registry.fedoraproject.org/fedora-minimal:latest
 
 # Install any additional packages you need
-RUN dnf -y install ruby rubygems @PODMAN_REMOTE@ && \
+RUN dnf -y install ruby rubygems @PODMAN_REMOTE@&& \
     dnf clean all && \
     gem install rake
 

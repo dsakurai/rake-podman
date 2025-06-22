@@ -6,6 +6,6 @@ task default: :info
 
 # Define a task
 task :info do
-    @PODMAN_REMOTE@
     puts "HOST_WORKDIR=#{ENV['HOST_WORKDIR']}"
+    @PODMAN_REMOTE@
 end
