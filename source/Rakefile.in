@@ -6,6 +6,6 @@ task default: :info
 
 # Define a task
 task :info do
+    @PODMAN_REMOTE@
     puts "HOST_WORKDIR=#{ENV['HOST_WORKDIR']}"
-    sh "podman-remote run --rm hello-world"
 end
