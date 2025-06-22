@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  rake_service:
+    build:
+      context: .
+    working_dir: /workdir
+    volumes:
+      - .:/workdir
+      - /run/user/1000/podman/podman.sock:/run/podman/podman.sock:Z
+
+    environment:
+      HOST_WORKDIR: ${HOST_WORKDIR}
+      PODMAN_SOCKET: /run/podman/podman.sock
+
+    security_opt:
+      - label=disable
+    stdin_open: true
+    tty: true
